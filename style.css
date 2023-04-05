@@ -1,0 +1,82 @@
+.health-bar{
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    height: 20px;
+    width: 80%;
+    border: 2px solid black;
+    transform: translateX(-50%);
+
+}
+*{
+    user-select: none !important;
+}
+
+
+
+body{
+    --halusky: 50deg;
+    margin: 0;
+    padding: 0;
+}
+
+.health-bar .h{
+    height: 100%;
+    width: 100%;
+    transition: 0.1s;
+    background-color: red;
+}
+
+span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    font-size: 128px;
+    color: rgb(216, 16, 223);
+    transform: translate(-50%, -50%);
+}
+
+.game-area{
+    filter: hue-rotate(var(--halusky));
+    transform: rotate(var(--halusky));
+    transition: 3s;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://edm.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:good%2Cw_1200%2Cx_536%2Cy_330/MTkzNjA2OTUyMjY4MzQyNzY4/bounce-the-ounce-guy.jpg");
+
+}
+
+.piko{
+    position: absolute;
+z-index: 5;
+    height: 60px;
+    width: 60px;
+    position: relative;
+    transition: 0.1s;
+}
+
+.piko img{
+    
+    height: 100%;
+    width: 100%;
+    background-position: contain;
+}
+.gameover{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    background-color: palevioletred;
+    z-index: 10;
+}
+.gameover img{
+    height: 100%;
+    width: 100%;
+    background-position: contain;
+}
