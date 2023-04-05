@@ -34,6 +34,6 @@ piko.addEventListener("click", () => {
   if (speed > 20) {
     speed = 20;
   }
-  piko.style.top = Math.random() * 80 + 10 + "%";
-  piko.style.left = Math.random() * 80 + 10 + "%";
+  piko.style.top = Math.random() * 80 + "%";
+  piko.style.left = Math.random() * 80 + "%";
 });
