@@ -5,16 +5,24 @@ const scoreDis = document.getElementById('score');
 const halusky = document.getElementById('halucinace');
 const reset = document.getElementById('reset');
 const blikani = document.getElementById('body');
+const play = document.getElementById('play');
 const bool = false;
 let stamina = 100;
-
+  
 const list = ["#ff0000", "#ff8000", "#ffff00", "#80ff00", "#00ff80", "#00ffff", "#0000ff", "#8000ff", "#ff0080"];
 
 let score = 0;
 let speed = 1;
 let halucinace = 0;
+var audio = new Audio('Piko Párno.mp3');
+play.addEventListener('click', () =>{
+  const interval2 = setInterval(() => {
+    audio.play();
+  }, 100);
 
-function interval(){
+  play.style.visibility = 'hidden';
+  piko.style.visibility = 'visible';
+  function interval(){
   let inter = setInterval(() => {
     stamina -= speed;
     h.style.width = stamina + "%";
@@ -36,7 +44,7 @@ function interval(){
       });
     }
   }, 100);
-};
+  };
 interval();
 
 piko.addEventListener("click", () => {
@@ -59,4 +67,6 @@ piko.addEventListener("click", () => {
   piko.style.top = Math.random() * 80 + "%";
   piko.style.left = Math.random() * 80 + "%";
   blikani.style.backgroundColor = list[Math.floor(Math.random() * 10)];
+  });
 });
+
