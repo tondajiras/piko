@@ -6,6 +6,7 @@ const halusky = document.getElementById('halucinace');
 const reset = document.getElementById('reset');
 const blikani = document.getElementById('body');
 const play = document.getElementById('play');
+
 const bool = false;
 let stamina = 100;
   
@@ -49,6 +50,7 @@ interval();
 
 piko.addEventListener("click", () => {
   score++;
+  halusky.style.setProperty('--move', score  /2);
   scoreDis.innerHTML = score;
   scoreDis.animate({
     transform: "scale(1.2) translate(-50%, -50%)"
@@ -61,12 +63,17 @@ piko.addEventListener("click", () => {
     stamina = 100;
   }
 
+  if(score === 15){
+ halusky.style.backgroundImage = "url('https://i0.wp.com/i.ytimg.com/vi/PzP1XC51kro/hqdefault.jpg?w=470&ssl=1')"
+  }
+
   if (speed > 20) {
     speed = 20;
   }
   piko.style.top = Math.random() * 80 + "%";
   piko.style.left = Math.random() * 80 + "%";
   blikani.style.backgroundColor = list[Math.floor(Math.random() * 10)];
+ 
   });
 });
 

@@ -12,6 +12,10 @@
     user-select: none !important;
 }
 
+:root{
+   
+}
+
 .play{
     width: 40vw;
     height: 20vh;
@@ -27,6 +31,7 @@
 }
 
 body{
+    overflow: hidden;
     margin: 0;
     padding: 0;
     opacity: 0.7;
@@ -50,10 +55,12 @@ span{
 }
 
 .game-area{
+
     transition: 3s;
     height: 100vh;
     width: 100vw;
     background-size: cover;
+    position: absolute;
     background-position: center;
     background-image: url("https://edm.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:good%2Cw_1200%2Cx_536%2Cy_330/MTkzNjA2OTUyMjY4MzQyNzY4/bounce-the-ounce-guy.jpg");
 }
@@ -68,6 +75,7 @@ z-index: 5;
     position: relative;
     transition: 0.1s;
     visibility: hidden;
+   
 }
 
 .piko img{
@@ -110,21 +118,27 @@ z-index: 5;
 
 @keyframes halucinaceAnimace {
     0%{
+       
         background-size: calc(100%);
     }
     33%{
-        background-position: left(10%);
+        margin-top: calc(var(--move)+ "px");
         background-size: calc(120%);
     }
     66%{
-        background-position: left(-10%);
+        margin-left: calc(var(--move)+ "px");
+
         background-size: calc(90%);
     }
     84%{
+        margin-right: calc(var(--move)+ "px");
         background-size: calc(105%);
+        margin-top: calc(var(--move)+ "px");
     }
     100%{
         background-size: calc(100%);
+        margin-bottom: calc(var(--move) + 'px');
+
     }
 }
 @keyframes rainbow {
