@@ -6,11 +6,13 @@ const halusky = document.getElementById('halucinace');
 const reset = document.getElementById('reset');
 const blikani = document.getElementById('body');
 const play = document.getElementById('play');
+const pikoparno = document.getElementById('pikoparno');
 
 const bool = false;
 let stamina = 100;
   
 const list = ["#ff0000", "#ff8000", "#ffff00", "#80ff00", "#00ff80", "#00ffff", "#0000ff", "#8000ff", "#ff0080"];
+const list2 = ["./drugs.png", "./lajna.png", "./parno.png", "./bong.png"];
 
 let score = 0;
 let speed = 1;
@@ -49,6 +51,7 @@ play.addEventListener('click', () =>{
 interval();
 
 piko.addEventListener("click", () => {
+  pikoparno.src = list2[Math.floor(Math.random() * 4)];
   score++;
   halusky.style.setProperty('--move', score  /2);
   scoreDis.innerHTML = score;
